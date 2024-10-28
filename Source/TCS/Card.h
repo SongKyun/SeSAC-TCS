@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -15,7 +13,6 @@ class TCS_API ACard : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	ACard();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Card")
@@ -26,4 +23,7 @@ public:
 
 	// 카드의 정보를 콘솔에 출력하여 디버깅하는 함수
 	void PrintCardInfo() const;
+
+	// 에셋 경로로 카드 데이터를 로드하는 함수 추가
+	void LoadAndInitializeCard(const FString& AssetPath);
 };

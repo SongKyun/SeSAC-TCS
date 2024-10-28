@@ -1,11 +1,7 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "Hand.h"
 #include "Card.h"
 #include "CardData.h"
 
-// Sets default values
 AHand::AHand()
 {
 	PrimaryActorTick.bCanEverTick = true; // 손패의 시각적 효과 업데이트 틱 활성화
@@ -62,15 +58,8 @@ void AHand::PrintHandInfo() const
 	{
 		if (Card && Card->CardData)
 		{
-			UE_LOG(LogTemp, Log, TEXT(" - %s (Mana Cost: %d)"), *Card->CardData->CardName, Card->CardData->ManaCost);
+			UE_LOG(LogTemp, Log, TEXT(" - %s (Mana Cost: %d)"), *Card->CardData->CardName,
+				Card->CardData->ManaCost);
 		}
 	}
 }
-
-
-
-
-
-
-
-
