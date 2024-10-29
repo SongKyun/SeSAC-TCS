@@ -16,7 +16,7 @@
 //	Weapon,		// 무기 카드
 //	HeroPower	// 영웅 능력 카드
 //};
- 
+
 UCLASS()
 class TCS_API UCardData : public UDataAsset
 {
@@ -40,4 +40,10 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Card")
 	UTexture2D* CardImage;
+
+	// 카드 효과를 적용하는 함수 자식 클래스에서 재정의 가능
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Effect")
+	void ApplyEffect(AActor* Target);
+
+	virtual void ApplyEffect_Implementation(AActor* Target);
 };
